@@ -8,10 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
+    "build:js": "NODE_ENV=production webpack",
     "build:css": "npm run build:sass && npm run build:postcss",
-    "watch:css": "node-sass src/css -o public -w & postcss -c ./postcss.json -w",
-    "start": "webpack-dev-server",
+    "watch:css": "node-sass src/css -o build -w & postcss -c ./postcss.json -w",
+    "start": "npm run watch:css & webpack-dev-server",
     "lint": "./node_modules/.bin/eslint ./src",
     "test": "jest",
     "test:coverage": "jest --coverage",
