@@ -8,15 +8,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "build:js": "NODE_ENV=production webpack",
-    "build:css": "npm run build:sass && npm run build:postcss",
-    "watch:css": "node-sass src/css -o build -w & postcss -c ./postcss.json -w",
-    "start": "npm run watch:css & webpack-dev-server",
+    "build:js": "NODE_ENV=production webpack --env=production --progress --profile --colors",
+    "dev": "webpack-dev-server --env=development --progress --colors",
     "lint": "./node_modules/.bin/eslint ./src",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "build:sass": "node-sass src/css -o build",
-    "build:postcss": "postcss -c ./postcss.json"
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "react",
@@ -39,11 +35,14 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "clean-webpack-plugin": "^0.1.15",
+    "css-loader": "^0.26.2",
     "jest": "^18.1.0",
+    "postcss-loader": "^1.3.3",
     "react-hot-loader": "^1.3.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^2.4.0"
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^3.0.0"
   },
   "dependencies": {
     "css-mqpacker": "^5.0.1",
@@ -53,9 +52,6 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
-    "node-sass": "^4.3.0",
-    "normalize-scss": "^6.0.0",
-    "postcss-cli": "^2.6.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
