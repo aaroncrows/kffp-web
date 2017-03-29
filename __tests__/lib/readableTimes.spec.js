@@ -1,6 +1,8 @@
-import { formatShowRange,
-         formatShowTime,
-         formatShowDate } from '../../src/js/lib/readableTimes';
+import {
+    formatShowRange,
+    formatShowTime,
+    formatShowDate
+} from '../../src/js/lib/readableTimes';
 
 describe('Readable Times Helpers', () => {
     it('formatShowRange should convert a weekday and two hours to a range', () => {
