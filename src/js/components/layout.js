@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
 import './layout.css';
-
+import Nav from './nav'
 // for demo purposes
 const socket = io('http://localhost:3000', {
     reconnectionAttempts: 3,
@@ -10,6 +10,6 @@ const socket = io('http://localhost:3000', {
 });
 socket.on('now-playing', obj => console.log(obj));
 
-const Layout = () => <h1>KFFP Home</h1>;
+const Layout = () => <Nav />;
 
 export default Layout;
