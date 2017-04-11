@@ -1,17 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, createRoutes, browserHistory } from 'react-router';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux';
 import storeFactory from './configureStore';
-import rawRoutes from './routes';
+import routes from './routes';
+
 
 const initialState = {};
 const store = storeFactory(initialState);
-const routes = createRoutes(rawRoutes);
+const history = createBrowserHistory();
 
 render(
     <Provider store={store}>
-        <Router history={browserHistory} routes={routes} />
+        <Router history={history} routes={routes} />
     </Provider>,
     document.getElementById('app')
 );
