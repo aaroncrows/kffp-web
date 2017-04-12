@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './nav.css';
 
 class NavBar extends Component {
@@ -10,12 +11,13 @@ class NavBar extends Component {
     render () {
         return (<header role="banner">
             <div className="site-branding">
-                <a href="http://www.freeformportland.org/" rel="home">
+                <Link to="/">
                     <img
                         alt="Freeform Portland"
                         src="http://www.freeformportland.org/wp-content/themes/graphy/images/freeform-portland.svg"
                     />
-                </a>
+
+                </Link>
             </div>
             <div>
                 <nav role="navigation">
@@ -23,7 +25,7 @@ class NavBar extends Component {
                     <h1 onClick={() => this.setState({ displayMenu: !this.state.displayMenu })}>Menu</h1>
                     <ul className={`menu${this.state.displayMenu ? ' toggle-menu' : ''}`}>
                         <li className="about">
-                            <a href="http://www.freeformportland.org/about/">About</a>
+                            <Link to="/about">About</Link>
                             <ul className="sub-menu">
                                 <li><a href="http://www.freeformportland.org/about/volunteer/">Volunteer</a></li>
                                 <li><a href="http://www.freeformportland.org/about/underwriting/">Underwriting</a></li>
