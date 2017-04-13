@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
     about,
     instagram,
@@ -24,12 +26,13 @@ class NavBar extends Component {
     render () {
         return (<header className={siteBanner}role="banner">
             <div className={siteBranding}>
-                <a href="#">
+                <Link to="/">
                     <img
                         alt="Freeform Portland"
                         src="http://www.freeformportland.org/wp-content/themes/graphy/images/freeform-portland.svg"
                     />
-                </a>
+
+                </Link>
             </div>
             <div>
                 <nav role="navigation">
@@ -37,7 +40,7 @@ class NavBar extends Component {
                     <h1 className={menuLink} onClick={() => this.setState({ displayMenu: !this.state.displayMenu })}>Menu</h1>
                     <ul className={`${menu} ${navLink} ${this.state.displayMenu ? toggleMenu : ''}`}>
                         <li className={about}>
-                            <a className={navLink} href="#about">About</a>
+                            <Link className={navLink} to="/about">About</Link>
                             <ul className={subMenu}>
                                 <li><a className={navLink} href="#volunteer">Volunteer</a></li>
                                 <li><a className={navLink} href="#underwriting">Underwriting</a></li>

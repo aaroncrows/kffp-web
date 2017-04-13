@@ -15,7 +15,8 @@ module.exports = function (env) {
             contentBase: path.join(__dirname, '..', 'build'),
             hot: true,
             host: '127.0.0.1',
-            port: 8080
+            port: 8080,
+            historyApiFallback: true
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
