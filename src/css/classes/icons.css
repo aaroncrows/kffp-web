@@ -1,0 +1,47 @@
+:import('../rules/fonts.css') {
+  icons: icons;
+}
+
+.faDefaults {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hamburgerMenu:before {
+  /* fa-bars */
+  content: "\f0c9";
+  font-family: FontAwesome;
+}
+
+.play:before {
+  /* fa-play */
+  content: "\f04b";
+  font-family: FontAwesome;
+}
+
+.downArrow:before {
+  /* fa-angle-down */
+  content: "\f107";
+  font-family: FontAwesome;
+}
+
+.facebookLogo:before {
+  /* fa-facebook-square */
+  content: "\f082";
+  font-family: FontAwesome;
+}
+
+.instagramLogo:before {
+  /* fa-instagram */
+  content: "\f16d";
+  font-family: FontAwesome;
+}
+
+.twitterLogo:before {
+  /* fa-twitter */
+  content:"\f081";
+  font-family: FontAwesome;
+}

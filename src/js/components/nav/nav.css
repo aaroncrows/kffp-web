@@ -1,82 +1,74 @@
-/* header is Bitter, Body is Lora */
-
-/* Global Styles */
-
-/* Clear Some Defaults */
-
-a, a:hover, a:visited {
-  color: inherit;
-  text-decoration: none;
+:import('../../../css/classes/links.css') {
+  linkHover: linkHover;
+  linkDefaults: linkDefaults;
 }
 
-body {
-  margin: 0;
-  /* Original site has media queries setting the max-width on a container around the whole site.
-     This padding on the body is a stand in for that. */
-  padding : 0 20px;
+:import('../../../css/rules/palette.css') {
+  borderColor: borderColor;
 }
 
-/* Fonts */
-h1, h2, h3, h4, h5, h6, a {
-  font-family: Bitter, Georgia, serif
+:import('../../../css/classes/icons.css') {
+  faDefaults: faDefaults;
+  hamburgerMenu: hamburgerMenu;
+  play: play;
+  facebookLogo: facebookLogo;
+  twitterLogo: twitterLogo;
+  instagramLogo: instagramLogo;
+  downArrow: downArrow;
 }
 
-p, span {
-  font-family: Lora, Georgia, serif
+.navLink {
+  composes: linkHover linkDefaults;
 }
 
-/* Nav Bar */
-
-header nav a:hover, header nav h1:hover {
-  color:#b85051;
-  transition: 300ms
-}
-
-header nav {
-  border-color: #DDD;
+.siteBanner nav {
   border-style: solid;
   border-width: 1px 0;
+  border-color: borderColor;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   position: relative;
 }
 
-header nav ul {
+.siteBanner nav ul {
   padding-left: 0px;
 }
 
-.site-branding {
+.siteBranding {
   box-sizing: border-box;
   padding: 12px 0 24px 0;
   margin: 0 auto;
   text-align: center;
 }
 
-.site-branding img {
+.siteBranding img {
   zoom: 66%;
 }
 
 .menu a {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid borderColor;
   display: block;
   padding: 12px 0px;
   padding-left: 15px;
 }
 
-.sub-menu a {
+.subMenu a {
   padding-left: 30px;
 }
 
 .listen {
+  composes: linkHover linkDefaults play;
   flex: 0 0 50%;
   order: 1;
   padding: 17px 0;
   text-align: right;
 }
 
-header nav h1 {
-  cursor: pointer;
+.listen:before {
+  margin-right: 5px;
+}
+
+.siteBanner nav h1 {
   flex: 0 0 50%;
   font-size: 17px;
   font-weight: normal;
@@ -85,15 +77,20 @@ header nav h1 {
   padding: 17px 0;
 }
 
-header nav h1:before {
-  /* fa-bars */
-  content: "\f0c9";
-  font-family: FontAwesome;
+.menuLink {
+  composes: linkDefaults linkHover hamburgerMenu;
+  flex: 0 0 50%;
+  font-size: 17px;
+  font-weight: normal;
+  margin: 0px;
+  order: 0;
+  padding: 17px 0;
+}
+
+.menuLink:before {
   margin: 10px;
 }
 
-/* Have to set vertical padding on the list here and on the list items in .menu so the
-   hover state covers the whole nav */
 .menu {
   padding-left: 0;
   text-align: center;
@@ -102,7 +99,7 @@ header nav h1:before {
   order: 2;
 }
 
-header nav li {
+.siteBanner nav li {
   list-style: none;
   text-align: left;
 }
@@ -111,19 +108,11 @@ header nav li {
   position: relative;
 }
 
-.listen:before {
-  font-family: FontAwesome;
-  /* fa-play */
-  content: "\f04b";
-  font-size: 13px;
-  margin: 10px;
-}
-
 .social {
   flex: 1 1 100%;
   padding: 9px 0;
   text-align: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid borderColor;
   margin: 0px;
   order: 3;
 }
@@ -134,7 +123,7 @@ header nav li {
   margin-left: 40px;
 }
 
-.about:hover ul, .sub-menu:hover {
+.about:hover ul, .subMenu:hover {
   display: block;
   opacity: 1;
 }
@@ -143,21 +132,33 @@ header nav li {
   display: none;
 }
 
-.toggle-menu {
+.toggleMenu {
   display: block;
 }
+.facebook {
+  composes: faDefaults facebookLogo;
+}
+
+.instagram {
+  composes: faDefaults instagramLogo;
+}
+
+.twitter {
+  composes: faDefaults twitterLogo;
+}
+
+
 
 @media only screen and (min-width: 600px) {
   .social {
     display: block;
   }
 
-  header nav {
-    flex-direction: row;
+  .siteBanner nav {
     flex-wrap: nowrap;
   }
 
-  header nav h1 {
+  .siteBanner nav h1 {
     display: none;
   }
 
@@ -177,15 +178,15 @@ header nav li {
     padding-left: 0px;
   }
 
-  .site-branding {
+  .siteBranding {
     padding: 30px 0 36px 0;
   }
 
-  .site-branding img {
+  .siteBranding img {
     zoom: 1;
   }
 
-  .sub-menu a {
+  .subMenu a {
     padding-left: 30px;
   }
 
@@ -196,8 +197,8 @@ header nav li {
     margin-left: 5px;
   }
 
-  .sub-menu {
-    background-color: inherit;
+  .subMenu {
+    background-color: #fff;
     box-shadow: 0 0 3px #ccc;
     list-style: none;
     opacity: 0;
@@ -207,8 +208,8 @@ header nav li {
     left: 0px;
   }
 
-  .sub-menu li {
-    border: 1px solid #ddd;
+  .subMenu li {
+    border: 1px solid borderColor;
     padding: 15px 60px 15px 0px;
     text-align: left;
   }
