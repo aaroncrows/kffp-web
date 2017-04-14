@@ -42,13 +42,13 @@ class NavBar extends Component {
                         <li className={about}>
                             <Link className={navLink} to="/about">About</Link>
                             <ul className={subMenu}>
-                                <li><a className={navLink} href="#volunteer">Volunteer</a></li>
-                                <li><a className={navLink} href="#underwriting">Underwriting</a></li>
-                                <li><a className={navLink} href="#faq">FAQ</a></li>
+                                <li><Link className={navLink} to="/volunteer">Volunteer</Link></li>
+                                <li><Link className={navLink} to="/underwriting">Underwriting</Link></li>
+                                <li><Link className={navLink} to="/faq">FAQ</Link></li>
                             </ul>
                         </li>
-                        <li><a className={navLink} href="#schedule">Schedule</a></li>
-                        <li><a className={navLink} href="#donate">Donate</a></li>
+                        <li><Link className={navLink} to="/schedule">Schedule</Link></li>
+                        <li><Link className={navLink} to="/donate">Donate</Link></li>
                     </ul>
                     <ul className={`${social} ${this.state.displayMenu ? toggleMenu : ''}`}>
                         <li>

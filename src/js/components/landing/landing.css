@@ -1,0 +1,39 @@
+:import('../../../css/classes/headings.css') {
+    subHeading: subHeading;
+    secondaryHeading: secondaryHeading;
+}
+
+:import('../../../css/classes/links.css') {
+    linkDefaults: linkDefaults;
+}
+
+:import('../../../css/rules/fonts.css') {
+    body: body;
+}
+
+:import('../../../css/rules/palette.css') {
+    linkColor: linkColor;
+}
+
+.content {
+    composes: mainContentWrapper from '../../../css/classes/wrappers.css';
+    font-family: body;
+}
+
+.heading {
+    composes: secondaryHeading;
+}
+
+.subHeading {
+    composes: subHeading;
+}
+
+.link {
+    composes: linkDefaults;
+    color: linkColor;
+    text-decoration: underline;
+}
+
+.content img {
+  max-width: 100%;
+}
