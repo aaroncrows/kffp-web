@@ -135,6 +135,7 @@
 .toggleMenu {
   display: block;
 }
+
 .facebook {
   composes: faDefaults facebookLogo;
 }
@@ -146,8 +147,6 @@
 .twitter {
   composes: faDefaults twitterLogo;
 }
-
-
 
 @media only screen and (min-width: 600px) {
   .social {
@@ -191,7 +190,7 @@
   }
 
   .about > a:after {
-    /* fa-angle-down */
+
     content: "\f107";
     font-family: FontAwesome;
     margin-left: 5px;
