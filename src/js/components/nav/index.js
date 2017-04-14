@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './nav.css';
+
+import {
+    about,
+    instagram,
+    facebook,
+    listen,
+    menu,
+    menuLink,
+    navLink,
+    siteBanner,
+    siteBranding,
+    social,
+    subMenu,
+    toggleMenu,
+    twitter
+} from './nav.css';
 
 class NavBar extends Component {
     constructor () {
@@ -9,8 +24,8 @@ class NavBar extends Component {
     }
 
     render () {
-        return (<header role="banner">
-            <div className="site-branding">
+        return (<header className={siteBanner}role="banner">
+            <div className={siteBranding}>
                 <Link to="/">
                     <img
                         alt="Freeform Portland"
@@ -21,29 +36,29 @@ class NavBar extends Component {
             </div>
             <div>
                 <nav role="navigation">
-                    <a className="listen" href="http://74.63.72.20:8950/live">Listen Now</a>
-                    <h1 onClick={() => this.setState({ displayMenu: !this.state.displayMenu })}>Menu</h1>
-                    <ul className={`menu${this.state.displayMenu ? ' toggle-menu' : ''}`}>
-                        <li className="about">
-                            <Link to="/about">About</Link>
-                            <ul className="sub-menu">
-                                <li><a href="http://www.freeformportland.org/about/volunteer/">Volunteer</a></li>
-                                <li><a href="http://www.freeformportland.org/about/underwriting/">Underwriting</a></li>
-                                <li><a href="http://www.freeformportland.org/about/faq/">FAQ</a></li>
+                    <a className={listen} href="http://74.63.72.20:8950/live">Listen Now</a>
+                    <h1 className={menuLink} onClick={() => this.setState({ displayMenu: !this.state.displayMenu })}>Menu</h1>
+                    <ul className={`${menu} ${navLink} ${this.state.displayMenu ? toggleMenu : ''}`}>
+                        <li className={about}>
+                            <Link className={navLink} to="/about">About</Link>
+                            <ul className={subMenu}>
+                                <li><a className={navLink} href="#volunteer">Volunteer</a></li>
+                                <li><a className={navLink} href="#underwriting">Underwriting</a></li>
+                                <li><a className={navLink} href="#faq">FAQ</a></li>
                             </ul>
                         </li>
-                        <li><a href="/schedule/">Schedule</a></li>
-                        <li><a href="http://www.freeformportland.org/donate/">Donate</a></li>
+                        <li><a className={navLink} href="#schedule">Schedule</a></li>
+                        <li><a className={navLink} href="#donate">Donate</a></li>
                     </ul>
-                    <ul className={`social${this.state.displayMenu ? ' toggle-menu' : ''}`}>
+                    <ul className={`${social} ${this.state.displayMenu ? toggleMenu : ''}`}>
                         <li>
-                            <a href="http://www.facebook.com/freeformpdx"><i className="fa fa-facebook-square" /></a>
+                            <a className={navLink} href="http://www.facebook.com/freeformpdx"><i className={facebook} /></a>
                         </li>
                         <li>
-                            <a href="http://twitter.com/freeformpdx"><i className="fa fa-twitter-square" /></a>
+                            <a className={navLink} href="http://twitter.com/freeformpdx"><i className={twitter} /></a>
                         </li>
                         <li>
-                            <a href="http://www.instagram.com/freeformpdx"><i className="fa fa-instagram" /></a>
+                            <a className={navLink} href="http://www.instagram.com/freeformpdx"><i className={instagram} /></a>
                         </li>
                     </ul>
                 </nav>

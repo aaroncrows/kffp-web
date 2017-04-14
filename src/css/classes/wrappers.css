@@ -1,0 +1,21 @@
+.mainContentWrapper {
+  max-width: 700px;
+}
+
+.pageWrapper {
+    margin: 0;
+    padding : 0 20px;
+}
+
+@media screen and (min-width: 960px) {
+  .pageWrapper {
+      max-width: 1040px;
+  }
+}
+
+
+@media screen and (min-width: 1180px) {
+  .pageWrapper {
+      max-width: 1260px;
+  }
+}

@@ -1,0 +1,10 @@
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  /* Original site has media queries setting the max-width on a container around the whole site.
+     This padding on the body is a stand in for that. */
+  padding : 0 20px;
+}

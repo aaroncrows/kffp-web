@@ -1,0 +1,52 @@
+:import('../rules/fonts.css') {
+  heading: heading;
+}
+
+.primaryHeading, .subHeading, .secondaryHeading {
+  font-family: heading;
+}
+
+.subHeading {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    font-weight: 400;
+}
+
+.secondaryHeading {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 28px;
+    margin-top: 56px;
+    font-weight: 400;
+}
+
+.primaryHeading {
+    font-size: 26px;
+    margin-bottom: 28px;
+    margin-top: 38px;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 780px) {
+  .subHeading {
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 24px;
+      margin-top: 48px;
+  }
+
+  .secondaryHeading {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 28px;
+      margin-top: 42px;
+  }
+
+  .primaryHeading {
+      font-size: 34px;
+      margin-bottom: 28px;
+      margin-top: 56px;
+  }
+}

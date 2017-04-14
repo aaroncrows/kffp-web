@@ -1,0 +1,18 @@
+:import('../rules/palette.css') {
+  color: linkColor;
+}
+:import('../rules/fonts.css') {
+  heading: heading;
+}
+
+.linkDefaults {
+  font-family: heading;
+  color: #000;
+  text-decoration: none;
+}
+
+.linkHover:hover {
+  cursor: pointer;
+  color: color;
+  transition: 300ms;
+}
