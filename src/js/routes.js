@@ -9,17 +9,23 @@ import Volunteer from './components/volunteer';
 
 // wrap <Route> and use this everywhere instead, then when
 // sub routes are added to any route it'll work
-const RouteWithSubRoutes = (route) => (
+const RouteWithSubRoutes = route => (
     <Route
         path={route.path}
+        exact={route.exact}
         render={props => (
             // pass the sub-routes down to keep nesting
-            <route.component {...props} routes={route.routes}/>
+            <route.component {...props} routes={route.routes} />
         )}
     />
 );
 
 const routes = [
+    {
+        path: '/',
+        component: Landing,
+        exact: true
+    },
     {
         path: '/about',
         component: About
@@ -39,10 +45,6 @@ const routes = [
     {
         path: '/volunteer',
         component: Volunteer
-    },
-    {
-        path: '/landing',
-        component: Landing
     }
 ];
 
